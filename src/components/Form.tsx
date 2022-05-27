@@ -40,8 +40,8 @@ interface props {
 
 const style = {
   pt: 0.2,
-  my: 0,
-  mx: 2,
+  my: 1,
+  mx: 2.5,
   width: " 90%",
   fontWeight: "600",
   fontFamily: "Poppins",
@@ -85,12 +85,12 @@ export default function MultilineTextFields({
       <form noValidate autoComplete="off" onSubmit={submitHandler}>
         <div>
           <TextField
-            sx={{ ...style }}
+            sx={{ ...style, "&: active": { outline: "none" } }}
             id="filled-multiline-flexible"
             placeholder="Note Title"
             value={title}
             onChange={titleHandler}
-            variant="outlined"
+            variant="standard"
           />
           <TextField
             sx={{ ...style }}
@@ -100,7 +100,7 @@ export default function MultilineTextFields({
             rows={4}
             value={details}
             onChange={detailsHandler}
-            variant="outlined"
+            variant="standard"
           />
         </div>
 
@@ -112,7 +112,7 @@ export default function MultilineTextFields({
             placeholder="Note Title"
             value={category}
             onChange={changeHandler}
-            helperText="Please select your option"
+            helperText="Please select the category related to your title"
           >
             {options.map((option) => (
               <MenuItem key={option.value} value={option.value}>

@@ -25,7 +25,7 @@ const CardItem = ({ notes, setNotes }: props) => {
       {notes.map((note) => {
         return (
           <Grid item key={note.id}>
-            <Card elevation={1} sx={{ display: "flex", p: 1 }}>
+            <Card elevation={1} sx={{ display: "flex", p: 0 }}>
               <IconButton
                 sx={{
                   display: "flex",
@@ -38,13 +38,15 @@ const CardItem = ({ notes, setNotes }: props) => {
               >
                 <DeleteIcon />
               </IconButton>
-              <CardContent>
+              <CardContent sx={{ p: 0, pt: 1 }}>
                 <Typography
                   variant="h5"
                   sx={{
-                    fontSize: 22,
+                    fontSize: "16px",
                     fontWeight: "600",
                     fontFamily: "Poppins",
+                    mt: "8px",
+                    mb: "3px",
                   }}
                 >
                   {note.title}
@@ -53,12 +55,12 @@ const CardItem = ({ notes, setNotes }: props) => {
                   sx={{
                     pt: 1,
                     pb: 1,
-                    fontSize: 22,
+                    my: "3px",
+                    fontSize: "16px",
                     fontWeight: "400",
                     fontFamily: "Poppins",
                   }}
                   variant="h5"
-                  fontSize={24}
                   color="#777777"
                 >
                   {note.details}
@@ -68,8 +70,8 @@ const CardItem = ({ notes, setNotes }: props) => {
                   sx={{
                     display: "inline-block",
                     border: "solid black 2px",
-                    borderRadius: 1,
-                    fontSize: 20,
+                    borderRadius: "4px",
+                    fontSize: "14px",
                     fontWeight: "400",
                     p: "5px",
                     fontFamily: "Poppins",

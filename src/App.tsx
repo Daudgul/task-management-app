@@ -19,7 +19,43 @@ import "./App.css";
 // });
 
 function App() {
-  const [notes, setNotes] = useState<INotes[]>([]);
+  const [notes, setNotes] = useState<INotes[]>([
+    {
+      id: "1",
+      title: "Design sign up flow",
+      details:
+        "By the time a prospect arrieve at your signup page, in most cases, the've alredy evaluat... ",
+      category: "Design",
+    },
+    {
+      id: "2",
+      title: "Landing page cotent",
+      details:
+        "Write the content of the new landing page and prepare the assets for the different section... ",
+      category: "Marketing",
+    },
+    {
+      id: "3",
+      title: "Make a new project for Portfoli",
+      details:
+        "In sunday have present some projects in the meeting but before thi meeting have to make this project... ",
+      category: "Todo",
+    },
+    {
+      id: "4",
+      title: "Define a new tool for metrics",
+      details:
+        "By the time a prospect arrieve at your signup page, in most cases, the've alredy evaluat... ",
+      category: "Design",
+    },
+    {
+      id: "2",
+      title: "Serch for some new investments",
+      details:
+        "Write the content of the new landing page and prepare the assets for the different section... ",
+      category: "Marketing",
+    },
+  ]);
   const [open, setOpen] = useState(false);
 
   // const classes = useStyles();
@@ -34,15 +70,15 @@ function App() {
   let length = notes.length;
 
   return (
-    <Container sx={{ backgroundColor: "#f6f6f6" }}>
+    <Container sx={{ backgroundColor: "#f6f6f6", mb: 1 }}>
       <Grid container spacing="1" direction="column">
         <Grid item>
           <Typography
             className="heading-first"
-            fontSize={48}
+            fontSize={40}
             fontWeight={500}
             variant="h2"
-            sx={{ fontFamily: "Poppins" }}
+            sx={{ fontFamily: "Poppins", mt: "60px" }}
           >
             Welcome back,
           </Typography>
@@ -51,10 +87,10 @@ function App() {
           <Typography
             variant="h5"
             className="heading-second"
-            fontSize={24}
+            fontSize={20}
             color="#777777"
-            fontWeight={400}
-            sx={{ fontFamily: "Poppins" }}
+            fontWeight={500}
+            sx={{ fontFamily: "Poppins", mt: "20px" }}
           >
             you've got {length} tasks coming up in the next days.
           </Typography>
@@ -65,7 +101,7 @@ function App() {
             <AddTaskIcon sx={{ color: "#777777" }} />
           </Button>
           <Typography
-            sx={{ fontFamily: "Poppins" }}
+            sx={{ fontFamily: "Poppins", m: "10px", fontWeight: 500 }}
             color="#aaaaaa"
             variant="h6"
           >
@@ -83,7 +119,7 @@ function App() {
             fontFamily: "Poppins",
           }}
         >
-          Please Write your Daily Tasks
+          Write your Daily Task...
         </DialogTitle>
         <Form notes={notes} setNotes={setNotes} handleClose={handleClose} />
       </Dialog>
