@@ -49,7 +49,7 @@ function App() {
       category: "Design",
     },
     {
-      id: "2",
+      id: "5",
       title: "Serch for some new investments",
       details:
         "Write the content of the new landing page and prepare the assets for the different section... ",
@@ -104,6 +104,7 @@ function App() {
             sx={{ fontFamily: "Poppins", m: "10px", fontWeight: 500 }}
             color="#aaaaaa"
             variant="h6"
+            onClick={handleToggle}
           >
             Add a new task...
           </Typography>

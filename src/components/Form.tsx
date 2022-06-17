@@ -13,7 +13,7 @@ const options = [
   },
   {
     value: "Marketing",
-    label: "Markiting",
+    label: "Marketing",
   },
   {
     value: "Todos",
@@ -85,7 +85,7 @@ export default function MultilineTextFields({
       <form noValidate autoComplete="off" onSubmit={submitHandler}>
         <div>
           <TextField
-            sx={{ ...style, "&: active": { outline: "none" } }}
+            sx={{ ...style, "&: focus": { outline: "none", border: "none" } }}
             id="filled-multiline-flexible"
             placeholder="Note Title"
             value={title}
@@ -142,7 +142,7 @@ export default function MultilineTextFields({
             type="submit"
             variant="contained"
           >
-            Submit form
+            Submit
           </Button>
         </DialogActions>
       </form>
